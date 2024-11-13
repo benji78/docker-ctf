@@ -1,0 +1,18 @@
+services:
+  ctf_challenge_name:
+    container_name: ctf_challenge_name
+    build: . # call Dockerfile
+    ports:
+      - container_port:host_port
+    restart: unless-stopped
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL # make sure no default priviledges are given to the container
+    networks:
+      - ctf_network
+
+networks:
+  ctf_network:
+    driver: bridge
