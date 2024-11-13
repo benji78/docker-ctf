@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>CTF challenge</title>
+    <!-- <link rel="icon" href="/images/favicon.svg"> -->
+    <!-- <link rel="stylesheet" href="/css/styles.css"/> -->
+</head>
+
+<body>
+    <div>
+        <h1>My perfect calculator</h1>
+        <form action="/" method="POST">
+            <label for="calculation">Enter your calculation:</label>
+            <input type="text" id="calculation" name="calculation" pattern="^[\d\+\-\|\%\^\*\/\(\)\.]{3,30}$" required>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+        <ul>
+            <li>+ = addition</li>
+            <li>- = soustraction</li>
+            <li>* = multiplication</li>
+            <li>/ = division</li>
+            <li>// = floor division</li>
+            <li>% = modulus</li>
+            <li>** = exponentiation</li>
+            <li>& = bitwise AND</li>
+            <li>| = bitwise OR</li>
+            <li>^ = bitwise XOR</li>
+            <li>() = parantheses</li>
+            <li>. = decimal separator</li>
+        </ul>
+    </div>
+</body>
+
+</html>

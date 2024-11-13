@@ -1,0 +1,20 @@
+services:
+  ctf_challenge:
+    container_name: example-ctf
+    build: .
+    ports:
+      - 1337:1337
+    restart: unless-stopped
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    networks:
+      - ctf_network
+    # environment:
+    #   PORT: 1339
+
+networks:
+  ctf_network:
+    driver: bridge
