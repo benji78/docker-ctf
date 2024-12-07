@@ -1,0 +1,10 @@
+This CTF is all about Web interfaces.
+There are 3 challenges,
+1. SQL injection:
+Username: admin
+Password:'1'='1
+2. Insecure URL Manipulation:
+after logging to one account (admin, user1 or user2)
+you can change in the url the profile and connect to the other accounts
+3. Weak passwords:
+you can bypass the login with brute force because the passwords are admin and user1
