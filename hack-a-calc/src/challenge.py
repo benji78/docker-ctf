@@ -22,7 +22,7 @@ class TaskHandler(SimpleHTTPRequestHandler):
         
         print("Received POST data:", data)
 
-        response = "<html><body><h2>Result:</h2><ul>"
+        response = "<html><body><h1>Hack-a-Calc Boundary Escapade</h1><h2>Result:</h2><ul>"
         for key, value in data.items():
             if key == "calculation":
                 output = self.calculator(value[0])

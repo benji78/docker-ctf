@@ -4,17 +4,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>CTF challenge</title>
+    <title>Hack-a-Calc Boundary Escapade</title>
     <!-- <link rel="icon" href="/images/favicon.svg"> -->
     <!-- <link rel="stylesheet" href="/css/styles.css"/> -->
 </head>
 
 <body>
     <div>
-        <h1>My perfect calculator</h1>
+        <h1>Hack-a-Calc Boundary Escapade</h1>
+        <h2> My perfect calculator</h2>
         <form action="/" method="POST">
             <label for="calculation">Enter your calculation:</label>
-            <input type="text" id="calculation" name="calculation" pattern="^[\d\+\-\|\%\^\*\/\(\)\.]{3,30}$" required>
+            <input type="text" id="calculation" name="calculation" pattern="^[\d\+\-\|\%\^\*\/\(\)\.]{3,50}$" required>
             <br>
             <input type="submit" value="Submit">
         </form>
