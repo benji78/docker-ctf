@@ -17,6 +17,4 @@ func main() {
 	}
 
 	fmt.Println("Défi : réussir à lire le champ caché (hiddenValue) sans y avoir accès directement.")
-
-	// use unsafe ou reflect
 }

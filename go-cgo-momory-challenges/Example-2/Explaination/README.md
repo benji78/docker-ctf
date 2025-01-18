@@ -29,16 +29,14 @@ type User struct {
 }
 
 func riskyFunction(u *User) {
-    // Pas de vérification : si 'u' est nil, on provoque un panic
     fmt.Printf("Nom : %s, Age : %d\n", u.Name, u.Age)
 }
 
 func main() {
     fmt.Println("Bienvenue dans le défi Null pointer / Panic!")
 
-    // Si l'argument est "panic", on passe nil à la fonction
     if len(os.Args) > 1 && os.Args[1] == "panic" {
-        riskyFunction(nil)  // risque de panic
+        riskyFunction(nil)  //Panic
     } else {
         u := &User{Name: "Alice", Age: 42}
         riskyFunction(u)

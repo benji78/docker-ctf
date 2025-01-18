@@ -11,22 +11,28 @@ func main() {
 	path := "./vuln"
 	re := regexp.MustCompile(`\('(.)'\)`)
 
-	foundFlag := false
 	var partialFlag string
+	foundFlag := false
 
-	for offset := 0; offset < 1000; offset++ {
+	for offset := 0; offset < 4100; offset++ {
 		cmd := exec.Command(path, fmt.Sprintf("%d", offset))
 		outputRaw, err := cmd.CombinedOutput()
 		if err != nil {
+			if strings.Contains(string(outputRaw), "Offset hors limites") {
+				continue
+			}
 			fmt.Printf("Erreur exécution offset %d: %v\n", offset, err)
 			continue
 		}
+
 		output := string(outputRaw)
+		fmt.Printf("Offset %d: sortie brute => %s\n", offset, output)
 
 		match := re.FindStringSubmatch(output)
 		if len(match) == 2 {
 			char := match[1]
 			partialFlag += char
+			fmt.Printf("Caractère trouvé : %s | Flag partiel : %s\n", char, partialFlag)
 		}
 
 		if strings.Contains(partialFlag, "FLAG{") {

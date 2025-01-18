@@ -28,24 +28,17 @@ import (
     "unsafe"
 )
 
-// Structure avec un champ privé
 type secretStruct struct {
     hiddenValue string
     Visible     string
 }
 
 func main() {
-    // Création d'un objet qui contient la donnée sensible
     secret := &secretStruct{
         hiddenValue: "CTF{Flag_Tres_Secret}",
         Visible:     "Je suis public",
     }
 
-    // Indication pour le joueur
-    fmt.Println("Défi : réussir à lire le champ caché (hiddenValue) sans y avoir accès directement.")
-    fmt.Println("Indice : regardez du côté de `unsafe` ou `reflect` pour contourner l'encapsulation.")
-
-    // On bloque l'exécution pour permettre l'analyse
     var pause string
     fmt.Scanln(&pause)
 }
