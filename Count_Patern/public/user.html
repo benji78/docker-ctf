@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h2>User Area</h2>
+    <form onsubmit="compter(event)">
+        <label for="texte">Text:</label>
+        <textarea id="texte" rows="4"></textarea>
+        <label for="pattern">Word or Pattern to search:</label>
+        <input type="text" id="pattern" />
+        <button type="submit">Count</button>
+    </form>
+    <div class="result" id="result"></div>
+    <button class="logout" onclick="logout()">Logout</button>
+</div>
+<script src="my_utility_functions.js"></script>
+</body>
+</html>
