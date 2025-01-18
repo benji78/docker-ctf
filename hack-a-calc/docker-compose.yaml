@@ -1,6 +1,6 @@
 services:
-  ctf_challenge:
-    container_name: example-ctf
+  hack-a-calc:
+    container_name: hack-a-calc
     build: .
     ports:
       - 1337:1337
