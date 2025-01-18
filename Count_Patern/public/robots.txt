@@ -1,3 +1,2 @@
 User-agent: *
 Disallow: secret_page_that_definitely_doesnt_have_a_flag_hide_inside.html
-Disallow: db.csv
