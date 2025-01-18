@@ -50,7 +50,7 @@ Using the previous ZAP hint, there is a `.csv` file containing all usernames and
 <details>
     <summary>Solution for Flag 1: Click me!</summary>
 
-On the user page, enter more than 10,000 characters into a field. You can also inspect https://localhost:3000/my_utility_functions.js.
+On the user page, enter more than 10,000 characters into a field.
 </details>
 
 <details>
