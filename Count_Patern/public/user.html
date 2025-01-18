@@ -18,6 +18,24 @@
     <div class="result" id="result"></div>
     <button class="logout" onclick="logout()">Logout</button>
 </div>
-<script src="my_utility_functions.js"></script>
+<script>
+    async function compter(event) {
+        event.preventDefault();
+        const text = document.getElementById("texte").value;
+        const pattern = document.getElementById("pattern").value;
+        const response = await fetch("/compter", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ text, pattern }),
+        });
+        const data = await response.json();
+        document.getElementById("result").textContent = data.result || "Error";
+    }
+
+    function logout() {
+        sessionStorage.removeItem("role");
+        window.location.href = "login.html";
+    }
+</script>
 </body>
 </html>
