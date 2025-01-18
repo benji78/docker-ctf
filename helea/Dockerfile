@@ -14,7 +14,6 @@ RUN chown -R root:root /app
 RUN chmod -R 755 /app
 
 # Create non-root user for security
-# -m creates the home directory, -r the system account, -s sets the login shell
 RUN addgroup -S app_group && adduser -S app_user -G app_group
 
 # switch to this user
