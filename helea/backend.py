@@ -138,7 +138,7 @@ def login():
         except Exception as e:
             print(e)
             if str(e) == "no such table: users":
-                return redirect(url_for('index', error=f"{str(e)}" + "<br>flag{ToTal_DamaGe}"))
+                return redirect(url_for('index', error=f"{str(e)}" + " flag{ToTal_DamaGe}"))
             else: raise Exception(e)
 
         if user:
