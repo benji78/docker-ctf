@@ -1,4 +1,4 @@
-FROM python:3.9-slim-buster
+FROM python:3.9-alpine
 
 WORKDIR /app
 
@@ -11,8 +11,7 @@ RUN chmod -R 755 /app
 RUN chmod 744 /app/flag.txt
 
 # Create non-root user for security
-# -m creates the home directory, -r the system account, -s sets the login shell
-RUN useradd -m -r -s /bin/bash flag-wonderfull_escapade
+RUN addgroup -S app_group && adduser -S  flag-wonderfull_escapade -G app_group
 
 # switch to this user
 USER flag-wonderfull_escapade
