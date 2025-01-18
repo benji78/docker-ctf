@@ -1,4 +1,0 @@
-do 'pip install virtualenv' in bash or 'pip install Flask' if you already have it 
-do 'python backend.py'
-go to 'http://127.0.0.1:5000/' on your browser
-you need sqlite3
