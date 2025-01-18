@@ -2,7 +2,7 @@
 
 ## Setup Instructions
 
-1. Install Docker (and Docker Compose)
+1. Install Docker (and Docker Compose if you have an old version of docker)
 2. Clone this repository
 
     ```shell
@@ -21,17 +21,19 @@
 4. Build and run the challenge
 
    ```shell
-   docker-compose up --build
+   docker-compose up --build -d
    ```
 
 5. Open the challenge in you browser
 
    [127.0.0.1:1337](http://127.0.0.1:1337)
 
+The objective is to find as many flags as possible for each challenge. CTF flags use the format `flag{...}` to clearly identify the solution to a challenge. The text within the curly braces is the specific answer you've found.
+
 ## Solution
 
-The `SOLUTION.md` can be found in the `exploits` folder of each challenge. There is also a script automating the exploit. For example, you can run :
+A solution to each challenge can be found in the `solution` folder of each challenge and details are provided in the `README.md`. There is also a script automating the exploit. For example, you can run :
 
 ```shell
-python exploits/solve.py
+python solution/solve.py
 ```
