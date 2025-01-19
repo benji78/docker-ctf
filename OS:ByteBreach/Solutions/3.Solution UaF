@@ -1,0 +1,22 @@
+Vulnerability Overview:
+> data points to allocated memory, which is then freed.
+> The pointer data is still used afterward.
+> If the newly allocated chunk (another) doesn’t overwrite all of data’s old contents, you can sometimes still read the Base64-encoded flag from data.
+
+Exploitation Steps:
+1. Compile & run:
+   gcc -o CTFUaf CTFUaf.c
+   ./CTFUaf
+2. Observe the output:
+    Often you’ll see:
+      Memory Freed...
+      Data pointer (stale): Some new data...
+    This indicates that data was overwritten by another.
+  >In some cases (depending on OS, heap allocation patterns, or if you remove strcpy(another, ...)), you might still see:
+       Data pointer (stale): ZmxhZ3toYXJkX3VhZn0=
+    That’s the encoded flag, which decodes to flag{hard_uaf}.
+3. In a more advanced scenario, you could manipulate allocations to ensure that memory isn’t overwritten (e.g., by freeing or allocating blocks of certain sizes), letting you read the original data.
+
+Key Takeaway:
+Use-after-free flaws arise when pointers to freed memory are still used. Always set pointers to NULL after free(), and manage allocations carefully to avoid stale pointers.
+Decoding the Flags
