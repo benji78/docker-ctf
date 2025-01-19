@@ -4,8 +4,8 @@
 [![author](https://img.shields.io/badge/author-keauranthain-blue)](https://github.com/keauranthain)
 
 ## How to setup
-1) If your on windows, launch `setup.bat`.
-2) Run `server.js`, which will send you directly to the website.
+1) make "npm install" command on the cmd 
+2) make "node server.js" to start the CFT
 
 ## Useful Data
 - The website user account credentials are: username: "user", password: "1234".
