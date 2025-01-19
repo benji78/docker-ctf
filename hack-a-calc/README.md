@@ -11,7 +11,7 @@ The first is not too difficult to find so you probably don't need a hint if you 
 ![score](https://img.shields.io/badge/MADIUM-yellow)
 The second requires some trial and error to get your hands on a special txt file's content.\
 ![score](https://img.shields.io/badge/VERY_HARD-red)
-The third and most difficult is the name of the user executing the python server process.
+The third and most difficult is the name of the user executing the python server process. (This flag's format is: `flag-...`)
 
 ## Hints
 
