@@ -4,7 +4,7 @@
 [![author](https://img.shields.io/badge/author-keauranthain-blue)](https://github.com/keauranthain)
 
 ## How to setup
-1) Launch `setup.bat`.
+1) If your on windows, launch `setup.bat`.
 2) Run `server.js`, which will send you directly to the website.
 
 ## Useful Data

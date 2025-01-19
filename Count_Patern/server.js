@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 const sessions = {};
-const adminFlag = "no_way_you_find_the_admin_password__take_your_flag";
+const adminFlag = "flag{no_way_you_find_the_admin_password__take_your_flag}";
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "login.html"));
@@ -58,7 +58,7 @@ app.get("/user.html", (req, res) => {
 function countOccurrences(text, pattern) {
     const crash_limit = 10000;
     if (text.length > crash_limit || pattern.length > crash_limit) {
-        return "this_is_too_heavy__i_cannot_count_that";
+        return "flag{this_is_too_heavy__i_cannot_count_that}";
     }
     let count = 0, index = 0;
     while (true) {

