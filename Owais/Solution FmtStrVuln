@@ -1,0 +1,29 @@
+Vulnerability Overview:
+
+> printf(buffer) is used directly with user input as the format string.
+> An attacker can supply format specifiers (%x, %p, %s, etc.) to read or write arbitrary memory.
+> The goal is to leak the Base64-encoded flag (ZmxhZ3tleGFzeV9mbXR9), which decodes to flag{easy_fmt}.
+
+Exploitation Steps:
+ 1. Compile and run:
+        gcc -o CTFFmtStr CTFFmtStr.c fno0stack-protector-no-pie
+        ./CTFFmtStr
+ 2. Test format string inputs:
+    For instance, enter:
+         %p %p %p %p %p
+ 3. Observe random memory addresses or hex values.
+ 4. Find the offset to the secret:
+ 5. Keep adding %p (or %x) until you see something that looks like ASCII for your Base64 string.
+Sometimes using %s at the correct offset can directly print the string.
+
+6. 
+Enter your name:
+AAAA %p %p %p %p %s
+
+If you find the correct offset, you might see:
+AAAA 0x565590 some_address ... ZmxhZ3tleGFzeV9mbXR9
+Decode the flag:
+The printed string ZmxhZ3tleGFzeV9mbXR9 in Base64 decodes to flag{easy_fmt}.
+
+Key Takeaway:
+Never use untrusted input as a format string. A secure approach is printf("%s", buffer);.
