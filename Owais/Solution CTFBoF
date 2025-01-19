@@ -1,0 +1,15 @@
+Vulnerability Overview:
+  > gets() reads user input without bounds checking.
+  > By entering more than 64 bytes, you overwrite saved EBP and return address on the stack.
+  > The exploit is to redirect execution to hidden_shell(), which reveals the encoded flag (ZmxhZ3tiMGZfc2hlbGxfYWNjZXNzfQ==) and spawns a shell. The decoded flag is flag{b0f_shell_access}.
+
+Exploitation Steps (Simplified):
+1. Compile with minimal protections:
+    gcc -fno-stack-protector -z execstack -o CTFBoF CTFBoF.c
+    ./CTFBoF
+3. Find the address of hidden_shell():
+ For example:
+  objdump -d CTFBoF | grep hidden_shell
+  or
+4. nm CTFBoF | grep hidden_shell
+    >Suppose you get 0x080484cb <hidden_shell> (this varies per environment).
