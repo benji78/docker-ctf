@@ -1,15 +1,27 @@
 # Hack-a-Calc Boundary Escapade
 
-![category](https://img.shields.io/badge/category-web-purple)
-![score](https://img.shields.io/badge/score-100-blue)
+![category](https://img.shields.io/badge/category-WEB-purple)
 [![author](https://img.shields.io/badge/author-benji78-blue)](https://github.com/benji78)
 
 ## Presentation
 
 This challenge has three flags.\
+![score](https://img.shields.io/badge/EASY-green)
 The first is not too difficult to find so you probably don't need a hint if you know where to look.\
-The second requires some trial and error to get your hands on the text.\
-The third and most difficult is the name of the user executing the python server process.
+![score](https://img.shields.io/badge/MADIUM-yellow)
+The second requires some trial and error to get your hands on a special txt file's content.\
+![score](https://img.shields.io/badge/VERY_HARD-red)
+The third and most difficult is the name of the user executing the python server process. (This flag's format is: `flag-...`)
+
+## Setup
+
+Build and run the challenge using docker compose
+
+```shell
+docker compose up --build -d
+```
+
+Open the challenge in you browser at [127.0.0.1:1337](http://127.0.0.1:1337)
 
 ## Hints
 
@@ -21,12 +33,12 @@ Sometimes servers leak information that should proably be best kept hidden from 
 <details>
     <summary>Hint for Flag 2: Click me!</summary>
 
-Client and server side validations are often managed separatly, with different programming languages, etc. leading to discrepancies in what is allowed. Go ahead and explore beyond browser-based restrictions! You are looking for a `flag` `txt` file.
+Client and server side validations are often managed separatly, with different programming languages, etc. leading to discrepancies in what is allowed. Go ahead and explore beyond browser-based restrictions! You are looking for a `flag.txt` file.
 </details>
 <details>
-    <summary>Hint for Flag 2: Click me!</summary>
+    <summary>Hint for Flag 3: Click me!</summary>
 
-If you got the second flag, you should not be far off, but you may have realised spaces are not allowed! Remember, you are looking for *who* is executing the python process.
+If you got the second flag, you should not be far off, but you may have realised spaces are not allowed! Remember, you are looking for the name of the user who is executing the python process.
 </details>
 
-## [Solution](exploits/SOLUTION.md)
+## [Solution](solution/README.md)
