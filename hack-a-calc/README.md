@@ -13,6 +13,16 @@ The second requires some trial and error to get your hands on a special txt file
 ![score](https://img.shields.io/badge/VERY_HARD-red)
 The third and most difficult is the name of the user executing the python server process. (This flag's format is: `flag-...`)
 
+## Setup
+
+Build and run the challenge using docker compose
+
+```shell
+docker compose up --build -d
+```
+
+Open the challenge in you browser at [127.0.0.1:1337](http://127.0.0.1:1337)
+
 ## Hints
 
 <details>
