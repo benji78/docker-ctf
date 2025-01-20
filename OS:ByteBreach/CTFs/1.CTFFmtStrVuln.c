@@ -2,8 +2,8 @@
 #include <string.h>
 
 int main() {
+    
     char buffer[64];
-}
     char secret_base64[] = "ZmxhZ3tleGFzeV9mbXR9";
 
     printf("Enter your name: ");
