@@ -1,0 +1,20 @@
+services:
+  pattern_count:
+    container_name: Pattern-Counter
+    build: .
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    # read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    networks:
+      - ctf_network
+    # environment:
+    #   PORT: 3000
+
+networks:
+  ctf_network:
+    driver: bridge
