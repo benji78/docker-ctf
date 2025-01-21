@@ -13,15 +13,10 @@ int main() {
     char buffer[64];
 
     printf("Enter some text: ");
-    // Use fgets instead of gets, specifying the buffer size
-    if (fgets(buffer, sizeof(buffer), stdin) != NULL) {
-        // Remove the newline character added by fgets
-        buffer[strcspn(buffer, "\n")] = '\0';
-    } else {
-        printf("Error reading input.\n");
-        return 1;
-    }
+    // Use scanf with "%s" so there is no buffer bound checking
+    scanf("%s", buffer);
 
     printf("You entered: %s\n", buffer);
+
     return 0;
 }
